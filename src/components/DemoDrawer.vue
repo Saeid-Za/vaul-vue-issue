@@ -1,21 +1,26 @@
 <script setup lang="ts">
-import { DrawerContent, DrawerOverlay, DrawerPortal, DrawerRoot, DrawerTrigger } from 'vaul-vue'
-import { onMounted, onUnmounted, ref } from 'vue'
+import {
+  DrawerContent,
+  DrawerOverlay,
+  DrawerPortal,
+  DrawerRoot,
+  DrawerTrigger,
+} from "vaul-vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
-const isOpen = ref(false)
+const isOpen = ref(false);
 
-let timerRef : number | null = null
+let timerRef: number | null = null;
 
 onMounted(() => {
   timerRef = setInterval(() => {
-    isOpen.value = !isOpen.value
-  }, 2500)
-})
+    isOpen.value = !isOpen.value;
+  }, 2500);
+});
 
-onUnmounted(()=>{
-  if(timerRef)
-    clearInterval(timerRef)
-})
+onUnmounted(() => {
+  if (timerRef) clearInterval(timerRef);
+});
 </script>
 
 <template>
@@ -31,17 +36,22 @@ onUnmounted(()=>{
         class="bg-gray-100 flex flex-col rounded-t-[10px] h-full mt-24 max-h-[96%] fixed bottom-0 left-0 right-0"
       >
         <div class="p-4 bg-white rounded-t-[10px] flex-1">
-          <div class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8" />
+          <div
+            class="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-gray-300 mb-8"
+          />
           <div class="max-w-md mx-auto">
             <h2 id="radix-:R3emdaH1:" class="font-medium mb-4">
               Drawer for Vue.
             </h2>
             <p class="text-gray-600 mb-2">
-              This component can be used as a Dialog replacement on mobile and tablet devices.
+              This component can be used as a Dialog replacement on mobile and
+              tablet devices.
             </p>
             <p class="text-gray-600 mb-2">
               It comes unstyled, has gesture-driven animations, and is made by
-              <a href="https://emilkowal.ski/" class="underline" target="_blank">Emil Kowalski</a>.
+              <a href="https://emilkowal.ski/" class="underline" target="_blank"
+                >Emil Kowalski</a
+              >.
             </p>
             <p class="text-gray-600 mb-8">
               It uses
@@ -49,13 +59,15 @@ onUnmounted(()=>{
                 href="https://www.radix-ui.com/docs/primitives/components/dialog"
                 class="underline"
                 target="_blank"
-              >Radix's Dialog primitive</a>
+                >Radix's Dialog primitive</a
+              >
               under the hood and is inspired by
               <a
                 href="https://twitter.com/devongovett/status/1674470185783402496"
                 class="underline"
                 target="_blank"
-              >this tweet.</a>
+                >this tweet.</a
+              >
             </p>
           </div>
         </div>
